@@ -19,41 +19,49 @@ async function getData(){
     })
 }
 getData();
+setInterval(getData,300000);
 
 function doWhatever(jsondata){
+  /*
     for(i=0;i<jsondata.fields.length;i++){
-        fs.appendFileSync('../Data/Raw/data.csv',jsondata.fields[i], err => {
+        fs.appendFileSync('data.csv',jsondata.fields[i], err => {
             if (err) {
               console.error(err);
             }
+            
           });
         if(i<jsondata.fields.length-1)
-        fs.appendFileSync('../Data/Raw/data.csv',",", err => {
+        fs.appendFileSync('data.csv',",", err => {
             if (err) {
               console.error(err);
             }
+            
           });
-    }
+    }*/
     for(i=0;i<jsondata.data.length;i++){
-        fs.appendFileSync('../Data/Raw/data.csv','\n', err => {
+        fs.appendFileSync('data.csv','\n', err => {
             if (err) {
               console.error(err);
             }
+            
           });
         for(j=0;j<jsondata.data[i].length;j++){
-            fs.appendFileSync('../Data/Raw/data.csv',jsondata.data[i][j], err => {
+            fs.appendFileSync('data.csv',jsondata.data[i][j], err => {
                 if (err) {
                   console.error(err);
                 }
+                
               });
             if(j<jsondata.data[i].length-1)
-            fs.appendFileSync('../Data/Raw/data.csv',",", err => {
+            fs.appendFileSync('data.csv',",", err => {
                 if (err) {
                   console.error(err);
                 }
+                
               });
         }
         
     }
+    console.log("success");
 }
 
