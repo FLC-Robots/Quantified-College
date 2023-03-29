@@ -7,9 +7,9 @@ Current Sensors (Inputs):
 3. Buoy 
 
 Server (Processing Hub): 
--Beelink SEi, CPU: 8279 8GB RAM, 256 GB 
--Windows 11
+- Beelink SEi, CPU: 8279 8GB RAM, 256 GB 
+- Windows 11
 
 Displays (Outputs): 
--Monitor*
--Audible display*
+- Monitor*
+- Audible display*
