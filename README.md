@@ -3,4 +3,5 @@ FLC Robotics and Folsom Lake College's Data Science Project. We collect data fro
 
 Current Sensors (Inputs): 
 Purple Air Weather 
+Buoy 
 
