@@ -13,3 +13,6 @@ Server (Processing Hub):
 Displays (Outputs): 
 - Monitor*
 - Audible display*
+
+Authors:
+- Abid Rasheed
