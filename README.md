@@ -11,8 +11,4 @@ Server (Processing Hub):
 - Windows 11
 
 Displays (Outputs): 
-- Monitor*
-- Audible display*
-
-Authors:
-- Abid Rasheed
+- Website URL  
