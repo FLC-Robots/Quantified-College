@@ -3,7 +3,8 @@ import data_processor as data_p
 
 import base64
 from io import BytesIO
-from matplotlib.figure import Figure
+
+import random
 
 dp = data_p.data_processor()
 app = Flask(__name__)
@@ -23,15 +24,11 @@ def poc():
 
 @app.route('/test')
 def test():
-    fig = Figure()
-    ax = fig.subplots()
-    ax.plot([1, 2])
-    # Save it to a temporary buffer.
-    buf = BytesIO()
-    fig.savefig(buf, format="png")
-    # Embed the result in the html output.
-    data = base64.b64encode(buf.getbuffer()).decode("ascii")
-    return render_template('test.html', data=data)
+    return render_template('test.html')
+
+@app.route('/data', methods=['POST'])
+def data():
+    return jsonify(num=random.randint(0, 100))
 
 def run():
     app.run(host='localhost', port=5000, debug=True)
