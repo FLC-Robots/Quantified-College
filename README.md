@@ -10,9 +10,5 @@ Server (Processing Hub):
 - Beelink SEi, CPU: 8279 8GB RAM, 256 GB 
 - Windows 11
 
-Displays (Outputs): 
-- Monitor*
-- Audible display*
-
-Authors:
-- Abid Rasheed
+Displays (Outputs):
+- Website URL
