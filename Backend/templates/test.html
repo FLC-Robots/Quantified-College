@@ -1,20 +1,23 @@
+{% block header %}
+	<h1>Test</h1>
+{% endblock %}
 
-<body onload="updateChart()">
+{% block content %}
 	<!--chart.js dynamically updating graphs -->
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-	<div>
-		<canvas id="myChart" width="400" height="400"></canvas>
+	<div onload="updateChart()">
+		<canvas id="myChart" width=".02em" height=".02em"></canvas>
 	</div>
 
-
-
-	<script>
+	<script type>
 		var intervalID = setInterval(updateChart, 1000);
 		var c = 0;
 		var temp;
-		function updateChart($){
+		var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};   
+		function updateChart(){
 			$.getJSON($SCRIPT_ROOT + '/data',
 			
 			function (data){
@@ -22,12 +25,40 @@
 				temp = data.num;
 			});
 
-			c = c+1;
+			c = c+1;	
 			myChart.data.labels.push(c);
 			myChart.data.datasets.forEach((dataset) => {
 				dataset.data.push(temp);
 			});
 			myChart.update();
-		}(jQuery);
+		}
+
+		var ctx = document.getElementById('myChart');
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: [c],
+				datasets: [{
+					label: 'Temperature',
+					data: [temp],
+					backgroundColor: [
+						'rgba(255, 99, 132, 0.2)',
+					],
+					borderColor: [
+						'rgba(255,99,132,1)',
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				}
+			}
+		});
 	</script>
-</body>
+{% endblock %}
