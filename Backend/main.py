@@ -26,7 +26,7 @@ def poc():
 def test():
     return render_template('test.html')
 
-@app.route('/data', methods=['POST'])
+@app.route('/data', methods=['GET'])
 def data():
     return jsonify(num=random.randint(0, 100))
 
