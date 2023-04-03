@@ -1,7 +1,7 @@
 # Quantified-College
 FLC Robotics and Folsom Lake College's Data Science Project. Students from the Innovation Center, Robotics Club, and FLC++ collect data from sensors, process it, store it, and to visualize and sonify it. 
 
-![Alt text](Quantified-College/DesignDiagrams/block diagram 2023-04-03 at 12.38.40 PM.png)
+![Alt text](DesignDiagrams/block diagram 2023-04-03 at 12.38.40 PM.png)
 
 ## Sensors (Inputs): 
 ### Active
