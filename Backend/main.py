@@ -1,17 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
-import data_processor as data_p
+#import data_processor as data_p
 
 import base64
 from io import BytesIO
 
 import random
 
-dp = data_p.data_processor()
+#dp = data_p.data_processor()
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return redirect(url_for('status'))
+    return redirect(url_for('test'))
 
 @app.route('/status')
 def status():
