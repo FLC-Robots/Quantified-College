@@ -6,5 +6,3 @@
 # seconds 
 # minutes 
 # dataes of the year? 
-
-# fhjaldshfa 
