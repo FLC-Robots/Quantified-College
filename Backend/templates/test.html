@@ -7,16 +7,18 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
 
 	<div onload="updateChart()">
 		<canvas id="myChart" width=".02em" height=".02em"></canvas>
 	</div>
 
-	<script type>
+	<script>
 		var intervalID = setInterval(updateChart, 1000);
 		var c = 0;
 		var temp;
-		var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};   
+		var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+
 		function updateChart(){
 			$.getJSON($SCRIPT_ROOT + '/data',
 			
